@@ -39,5 +39,11 @@
     @foreach($item as $x)
         <p>{{$loop->index}}> {{$x}}</p>
     @endforeach
+    @php
+        $name = "test";
+        $age = 12;
+        $gender = 5;
+    @endphp
+    <x-ProfileCard :name="$name" :age="$age" :gender="$gender" />
 </body>
 </html>

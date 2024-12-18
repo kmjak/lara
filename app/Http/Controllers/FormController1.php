@@ -15,6 +15,6 @@ class FormController1 extends Controller
             'msg' => $req->input('msg', null),
             'item' => ['apple', 'banana', 'cherry'],
         ];
-        return view('assignment/form1', $params);
+        return view('form1', $params);
     }
 }
