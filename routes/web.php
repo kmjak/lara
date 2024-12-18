@@ -6,6 +6,7 @@ use App\Http\Controllers\info;
 use App\Http\Controllers\req_res;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController1;
+use App\Http\Controllers\FormWithComponent;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,3 +30,5 @@ Route::get('/directive', function () {
 
 Route::get('/assignment/1', [FormController1::class, 'index'])->name('assignment1');
 Route::post('/assignment/1', [FormController1::class, 'index'])->name('assignment1');
+Route::get('/assignment/2', [FormWithComponent::class, 'index'])->name('assignment2');
+Route::post('/assignment/2', [FormWithComponent::class, 'index'])->name('assignment2');
