@@ -7,6 +7,7 @@ use App\Http\Controllers\req_res;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController1;
 use App\Http\Controllers\FormWithComponent;
+use App\Http\Controllers\calc;
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,3 +33,6 @@ Route::get('/assignment/1', [FormController1::class, 'index'])->name('assignment
 Route::post('/assignment/1', [FormController1::class, 'index'])->name('assignment1');
 Route::get('/assignment/2', [FormWithComponent::class, 'index'])->name('assignment2');
 Route::post('/assignment/2', [FormWithComponent::class, 'index'])->name('assignment2');
+
+Route::get('/calc',[calc::class,'index'])->name('calc');
+Route::post('/calc',[calc::class,'post'])->name('calc');
