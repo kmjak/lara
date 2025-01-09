@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController1;
 use App\Http\Controllers\FormWithComponent;
 use App\Http\Controllers\calc;
+use App\Http\Controllers\SampleMidController;
+use App\Http\Controllers\SampleMidController2;
+use App\Http\Middleware\SampleMid2;
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,3 +39,6 @@ Route::post('/assignment/2', [FormWithComponent::class, 'index'])->name('assignm
 
 Route::get('/calc',[calc::class,'index'])->name('calc');
 Route::post('/calc',[calc::class,'post'])->name('calc');
+
+Route::get('/midform',[SampleMidController2::class,'index'])->name('midform');
+Route::post('/midform',[SampleMidController2::class,'index'])->name('midform')->middleware(SampleMid2::class);
